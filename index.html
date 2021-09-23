@@ -8,12 +8,30 @@
 </head>
 <body>
     <h1>Simple Calculator</h1>
-    <script>
-        let firstValue = prompt('Enter your first value');
-        let operator = prompt('Enter your operator');
-        let secondValue = prompt('Enter your second value');
 
+    <main>
+        <label for="firstValue">First Value</label>
+        <input type="number" id="firstValue">
+        
+        <label for="operator">Operator</label>
+        <select id="operator">
+            <option value="+">+ add</option>
+            <option value="-">- substract</option>
+            <option value="/">/ divide</option>
+            <option value="*">* multiplicate</option>
+        </select>
+        
+        <label for="secondValue">Second Value</label>
+        <input type="number" id="secondValue">
+    </main>
+    <script>
         let result = 'no result';
+
+        let firstValue = parseInt(document.getElementById('firstValue').value);
+        let secondValue = parseInt(document.getElementById('secondValue').value);
+        let operator = document.getElementById('operator').value;
+
+        console.log(firstValue, operator, secondValue);
 
         switch(operator) {
             case '+':
